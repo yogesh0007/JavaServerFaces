@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+      
+<h:head>
+<link rel="stylesheet" type="text/css" href="${facesContext.externalContext.requestContextPath}/css/styleSheet.css" />
+<script src="JavaScript/script.js" type="text/javascript"/>
+<title>Prasai Family America</title>
+</h:head>
+
+<body>
+ 
+    
+<table align="center" class="ramu">
+<tr >
+<!--
+	<td class="logoPosition">
+		<h:graphicImage url="/Images/HelpingHandsLogo.jpg" alt="Helping-Hands" height="70" width="150" />
+	</td>
+-->	
+
+		<td class="titleText" align="center">
+		  <h1>Prasai Family America </h1>                                                              
+		</td>
+	
+</tr>
+</table>
+
+<table align = "center">
+<tr>
+	<td>
+		<ui:insert name="appHeaderXhtml" >
+				  <ui:include src="/appHeader.xhtml" />
+		</ui:insert>
+	</td>
+</tr>
+
+<tr>
+	
+	  <!--<h:graphicImage url="/Images/Family_Branches.jpg" alt="jsf-sun" />-->
+	  <td>
+              
+        <ui:insert name="body" >Default Body</ui:insert>
+				   
+                               
+      </td>
+	
+</tr>
+
+	
+             
+<tr> 
+	<td>
+		<div> 
+		        <ui:insert name="appFooter">
+		          <ui:include src="appFooter.xhtml"/>
+		        </ui:insert>     
+		        
+		</div>
+	</td>
+</tr>
+<tr>
+<td>
+© 2015 Prasai Trust, Herndon.
+</td>
+</tr>
+   
+</table>
+
+
+
+</body>
+
+</html>

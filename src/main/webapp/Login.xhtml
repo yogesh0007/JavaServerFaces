@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+      
+<body>
+
+This text above will not be displayed.
+
+<ui:composition template="MainPage.xhtml">
+
+  <ui:define name="body">
+  
+<table>
+	<tr>
+		<td><h1>User Registration Form</h1></td>
+	
+	</tr>
+	<tr>
+		<td>Login ID</td>
+		<td>
+			<h:inputText label="First Name" id="fname" value="#{userBean.firstName}" required="true"/>
+		</td>
+	</tr>
+		<tr>
+		<td>Password</td>
+		<td>
+			<h:inputSecret label="Last Name" id="lname" value="#{userBean.lastName}" required="true"/>
+		</td>
+	</tr>
+	
+</table>
+  </ui:define>
+  
+</ui:composition>
+
+This text below will also not be displayed.
+
+</body>
+</html>

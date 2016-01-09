@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    
+ 
+<h:body>
+
+<ui:composition template="MainPage.xhtml">
+
+<ui:define name="body">
+	<h:form>
+		<table>
+			<tr>
+				<td><h1>User Registration Form</h1></td>
+			</tr>
+			<tr>
+				<td>First Name:</td>
+				<td>
+					<h:inputText label="First Name" id="fname" value="#{customer.name}" required="true"/>
+				</td>
+			</tr>
+						<tr>
+				<td>First Name:</td>
+				<td>
+					<h:inputText label="First Name" id="fname" value="#{customer.name}" required="true"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Address:</td>
+				<td>
+					<h:inputText label="Last Name" id="lname" value="#{customer.address}" required="true"/>
+				</td>
+			</tr>	
+			<tr>
+				<td>
+					<h:commandButton value="Submit" action="#{customer.addCustomer()}" />
+				</td>
+			</tr>
+		</table>
+
+</h:form>
+
+ </ui:define>
+  
+</ui:composition>
+      
+</h:body>
+ 
+  
+ 
+</html>   
