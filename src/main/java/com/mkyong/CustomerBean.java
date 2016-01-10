@@ -11,15 +11,15 @@ public class CustomerBean implements Serializable{
 	//DI via Spring
 	CustomerBo customerBo;
 	
-	public String name;
+	public String fname;
 	public String address;
 	
-	public String getName() {
-		return name;
+	public String getFname() {
+		return fname;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFname(String fname) {
+		this.fname = fname;
 	}
 
 	public String getAddress() {
@@ -43,7 +43,7 @@ public class CustomerBean implements Serializable{
 	public String addCustomer(){
 		
 		Customer cust = new Customer();
-		cust.setName(getName());
+		cust.setName(getFname());
 		cust.setAddress(getAddress());
 		
 		customerBo.addCustomer(cust);
@@ -55,7 +55,7 @@ public class CustomerBean implements Serializable{
 	
 	//clear form values
 	private void clearForm(){
-		setName("");
+		setFname("");
 		setAddress("");
 	}
 	
