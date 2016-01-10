@@ -5,7 +5,7 @@ import java.util.Date;
 public class Customer{
 	
 	public long customerId;
-	public String name;
+	public String fname;
 	public String address;
 	public Date createdDate;
 	
@@ -15,11 +15,11 @@ public class Customer{
 	public void setCustomerId(long customerId) {
 		this.customerId = customerId;
 	}
-	public String getName() {
-		return name;
+	public String getFname() {
+		return fname;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setFname(String fname) {
+		this.fname = fname;
 	}
 	public String getAddress() {
 		return address;

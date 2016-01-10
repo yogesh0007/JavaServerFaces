@@ -10,7 +10,7 @@
             <column name="CUSTOMER_ID" />
             <generator class="identity" />
         </id>
-        <property name="name" type="string">
+        <property name="fname" type="string">
             <column name="NAME" length="45" not-null="true" />
         </property>
         <property name="address" type="string">
