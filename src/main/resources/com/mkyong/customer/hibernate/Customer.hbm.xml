@@ -13,8 +13,14 @@
         <property name="fname" type="string">
             <column name="FIRST_NAME" length="45" not-null="true" />
         </property>
+        <property name="lname" type="string">
+            <column name="LAST_NAME" length="45" not-null="true" />
+        </property>
         <property name="address" type="string">
             <column name="ADDRESS" not-null="true" />
+        </property>
+        <property name="zipcode" type="string">
+        	<column name="ZIPCODE" not-null="true"/>
         </property>
         <property name="createdDate" type="timestamp">
             <column name="CREATED_DATE" length="19" not-null="true" />

@@ -12,7 +12,11 @@ public class CustomerBean implements Serializable{
 	CustomerBo customerBo;
 	
 	public String firstName;
+	public String lastName;
 	public String address;
+	public String zip;
+
+	Customer cust = new Customer();
 	
 	public String getFirstName() {
 		return firstName;
@@ -21,6 +25,14 @@ public class CustomerBean implements Serializable{
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+	
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
 	public String getAddress() {
 		return address;
@@ -28,6 +40,14 @@ public class CustomerBean implements Serializable{
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	
+	public String getZip() {
+		return zip;
+	}
+
+	public void setZip(String zip) {
+		this.zip = zip;
 	}
 
 	public void setCustomerBo(CustomerBo customerBo) {
@@ -42,9 +62,11 @@ public class CustomerBean implements Serializable{
 	//add a new customer data into database
 	public String addCustomer(){
 		
-		Customer cust = new Customer();
+		
 		cust.setFname(getFirstName());
+		cust.setLname(getLastName());
 		cust.setAddress(getAddress());
+		cust.setZipcode(getZip());
 		
 		customerBo.addCustomer(cust);
 		
@@ -57,6 +79,7 @@ public class CustomerBean implements Serializable{
 	private void clearForm(){
 		setFirstName("");
 		setAddress("");
+		setLastName("");
 	}
 	
 }

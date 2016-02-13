@@ -28,9 +28,16 @@
  
     		<h:column>
     			<f:facet name="header">
-    				Name
+    				First Name
 				</f:facet>
     				#{c.fname}
+    		</h:column>
+    		
+    		<h:column>
+    			<f:facet name="header">
+    				Last Name
+				</f:facet>
+    				#{c.lname}
     		</h:column>
  
  			<h:column>
@@ -38,6 +45,13 @@
     				Address
 				</f:facet>
     				#{c.address}
+    		</h:column>
+    		
+    		<h:column>
+    			<f:facet name="header">
+    				Zip
+    			</f:facet>
+    				#{c.zipcode}
     		</h:column>
     		
     		<h:column>
@@ -54,19 +68,31 @@
  			
  			<h:panelGrid columns="3">
 			
-				Name : 
+				First Name : 
 				<h:inputText id="name" value="#{customer.firstName}" 
 					size="20" required="true"
 					label="Name" >
 				</h:inputText>
 					
 				<h:message for="name" style="color:red" />
+				
+				Last Name : 
+				<h:inputText id="lname" value="#{customer.lastName}" 
+					size="20" required="true"
+					label="Last Name">
+				</h:inputText>
+					
+				<h:message for="lname" style="color:red" />
 			
 				Address : 
 				<h:inputText id="address" value="#{customer.address}" required="true" label="Address"/>
 					
 				<h:message for="address" style="color:red" />
 				
+				ZipCode:
+				<h:inputText id="zip" value="#{customer.zip}" required="true" label="Zip"/>
+				
+				<h:message for="zip" style="color:red"/>
 			</h:panelGrid>
 			
 			<h:commandButton value="Submit" action="#{customer.addCustomer()}" />
