@@ -11,27 +11,14 @@ This text above will not be displayed.
 <ui:composition template="MainPage.xhtml">
 
   <ui:define name="body">
-  
-<table>
-	<tr>
-		<td><h1>User Registration Form</h1></td>
-	
-	</tr>
-	<tr>
-		<td>Login ID</td>
-		<td>
-			<h:inputText label="First Name" id="fname" value="#{userBean.firstName}" required="true"/>
-		</td>
-	</tr>
-		<tr>
-		<td>Password</td>
-		<td>
-			<h:inputSecret label="Last Name" id="lname" value="#{userBean.lastName}" required="true"/>
-		</td>
-	</tr>
-	
-</table>
-  </ui:define>
+
+		<div><h1>User Registration Form</h1></div>
+			<div class="columnRegister">Login ID</div>
+				<div><h:inputText label="First Name" id="fname" value="#{userBean.firstName}" required="true"/></div>
+			<div class="columnRegister">Password</div>
+				<div><h:inputSecret label="Last Name" id="lname" value="#{userBean.lastName}" required="true"/></div>
+				<button type="button" class="columnRegister btn btn-info btn-med">Submit</button>
+	</ui:define>
   
 </ui:composition>
 
