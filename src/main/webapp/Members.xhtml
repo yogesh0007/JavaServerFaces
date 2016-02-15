@@ -9,12 +9,116 @@
 <h:body>
       <ui:composition template="MainPage.xhtml">
       	
-	    <ui:define name="body">	
+	    <ui:define name="body" style="margin-left: 80px">	
+	    		
+			<!-- Modal For Delete -->
+	   
+			<div class="container">
+		
+			  <!-- Modal -->
+			  <div class="modal fade" id="deleteModal" role="dialog">
+			    <div class="modal-dialog">
+			    
+			      <!-- Modal content-->
+			      <div class="modal-content">
+			        <div class="modal-header">
+			          <button type="button" class="close" data-dismiss="modal">&times;</button>
+			          <h4 class="modal-title">Modal Header</h4>
+			        </div>
+			        <div class="modal-body">
+			          <p>Some text in the modal.</p>
+			        </div>
+			        <div class="modal-footer">
+			          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			        </div>
+			      </div>
+			      
+			    </div>
+			  </div>
+			  
+			</div>
+<!-- Modal For Delete -->
+			    	
+	    	<h:form>
 	    	
-	    	Members List
-	    	
-	    	<h:commandButton action="#{Display.displaying()}" value="Show Members" />
-	       
+	    	<h:dataTable value="#{customer.getCustomerList()}" var="c"
+    			styleClass="order-table"
+    			headerClass="order-table-header"
+    			rowClasses="order-table-odd-row,order-table-even-row"
+    			id = "members">
+ 
+    		<h:column>
+    			<f:facet name="header" class="tableHeader">
+    				Customer ID
+    			</f:facet>
+    				#{c.customerId}
+    		</h:column>
+ 
+    		<h:column class="tableHeader">
+    			<f:facet name="header">
+    				First Name
+				</f:facet>
+    				#{c.fname}
+    		</h:column>
+    		
+    		<h:column class="tableHeader">
+    			<f:facet name="header">
+    				Last Name
+				</f:facet>
+    				#{c.lname}
+    		</h:column>
+ 
+ 			<h:column class="tableHeader">
+    			<f:facet name="header">
+    				Address
+				</f:facet>
+    				#{c.address}
+    		</h:column>
+    		
+    		<h:column class="tableHeader">
+    			<f:facet name="header">
+    				Zip
+    			</f:facet>
+    				#{c.zipcode}
+    		</h:column>
+    		
+    		<h:column class="tableHeader">
+    			<f:facet name="header">
+    				Created Date
+				</f:facet>
+    				#{c.createdDate}
+    		</h:column>
+    		<h:column>
+    			<f:facet name="header">
+    				Edit/Delete
+    			</f:facet>
+    			<a href="">Edit</a>/<a href="" class="editor_remove" data-toggle="modal" data-target="#deleteModal">Delete</a>
+    		</h:column>
+    		
+    	</h:dataTable>
+	   </h:form> 
+	   
+	   
+	   <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"/>
+	   <link href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css"/>
+	<script>	
+	    $(document).ready(function() {
+	    	editor = $("[id$='members']").DataTable( {
+	        createdRow: function ( row ) {
+	            $('td', row).attr('tabindex', 0);
+	        	}	
+    		} );
+		} );  
+	    $("[id$='members']").on( 'click', 'a.editor_remove', function (e) {
+	        e.preventDefault();
+	        editor
+	            .title( 'Edit record' )
+	            .message( "Are you sure you wish to delete this row?" )
+	            .buttons( { "label": "Delete", "fn": function () { editor.submit() } } )
+	            .remove( $(this).closest('tr') );
+	    } );
+	 </script>
+	 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css"/>
 		</ui:define>
 		
 	</ui:composition>

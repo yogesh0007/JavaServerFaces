@@ -80,6 +80,7 @@ public class CustomerBean implements Serializable{
 		setFirstName("");
 		setAddress("");
 		setLastName("");
+		setZip("");
 	}
 	
 }
