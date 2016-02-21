@@ -34,7 +34,7 @@
 			    	
 	    	<h:form>
 	    	
-	    	<h:dataTable value="#{customer.getCustomerList()}" var="c"
+	    	<h:dataTable value="#{customerBean.getCustomerList()}" var="c"
     			styleClass="order-table"
     			headerClass="order-table-header"
     			rowClasses="order-table-odd-row,order-table-even-row"
@@ -67,14 +67,12 @@
 				</f:facet>
     				#{c.address}
     		</h:column>
-    		
     		<h:column class="tableHeader">
     			<f:facet name="header">
     				Zip
     			</f:facet>
     				#{c.zipcode}
     		</h:column>
-    		
     		<h:column class="tableHeader">
     			<f:facet name="header">
     				Created Date

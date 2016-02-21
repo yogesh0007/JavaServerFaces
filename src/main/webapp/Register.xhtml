@@ -12,49 +12,33 @@
 <ui:composition template="MainPage.xhtml">
 
 <ui:define name="body">
+		
 		<div style="margin-top:50px"></div>
 		<h4>Add New Customer</h4>
- 		<h:form>
+ 		<h:form id="registerForm">
 				<div class="columnRegister">
-					First Name : 
-					<h:inputText id="name" value="#{customer.firstName}" 
-						size="20" required="true"
-						label="Name">
-					</h:inputText>
-						
-					<h:message for="name" style="color:red" />
+					<label for="fname">First Name</label><br/>
+					<h:inputText id="fname" value="#{customerBean.firstName}" size="20" label="Name"></h:inputText>
 				</div>
 				
 				<div class="columnRegister">
-				Last Name : 
-				<h:inputText id="lname" value="#{customer.lastName}" 
-					size="20" required="true"
-					label="Last Name">
-				</h:inputText>
-					
-				<h:message for="lname" style="color:red" />
+					<label for="lname">Last Name </label><br/>
+					<h:inputText id="lname" value="#{customerBean.lastName}" size="20" label="Last Name"></h:inputText>
 				</div>
 				
 				<div class="columnRegister">
-				Address : 
-				<h:inputText id="address" value="#{customer.address}" required="true" label="Address" style="margin-left: 16px"/>
-					
-				<h:message for="address" style="color:red" />
+					<label for="address">Street Address </label><br/> 
+					<h:inputText id="address" value="#{customerBean.address}" required="true" size="50" label="Address"/>
 				</div>
-				
 				<div class="columnRegister">
-				ZipCode:
-				<h:inputText id="zip" value="#{customer.zip}" required="true" label="Zip" style="margin-left:16px"/>
-				
-				<h:message for="zip" style="color:red"/>
+					<label for="zip">ZipCode </label><br/>
+					<h:inputText id="zip" value="#{customerBean.zip}" required="true" label="Zip"/>
 				</div>
-				
 			<div>
-				<h:commandButton value="Submit" action="#{customer.addCustomer()}" type="button" class="columnRegister btn btn-info btn-med"/>
+				<h:commandButton value="Submit" action="#{customerBean.addCustomer()}" class="columnRegister btn btn-info btn-med"/>
 			</div>
  		</h:form>
-
-
+ 		<script src="JavaScript/jQueryFormValidate.js"/>
  </ui:define>
   
 </ui:composition>
