@@ -12,5 +12,6 @@ m=checkTime(m);
 s=checkTime(s);
 document.getElementById('txt').innerHTML=month + "/" +day +"/"+y+" </br> "+h+":"+m+":"+s;
 t=setTimeout(function(){startTime();},500);
+
 }
 
